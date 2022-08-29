@@ -99,7 +99,6 @@ export interface IDisplayOptions {
 export type NodeParameterValue = string | number | boolean | undefined | null;
 
 export interface INodeParameters {
-	// TODO: Later also has to be possible to add multiple ones with the name name. So array has to be possible
 	[key: string]: NodeParameterValue | INodeParameters | NodeParameterValue[] | INodeParameters[];
 
 }
@@ -246,16 +245,10 @@ export interface IExecuteData {
 }
 
 export interface ITaskDataConnections {
-	// Key for each input type and because there can be multiple inputs of the same type it is an array
-	// null is also allowed because if we still need data for a later while executing the workflow set teompoary to null
-	// the nodes get as input TaskDataConnections which is identical to this one except that no null is allowed.
 	[key: string]: Array<INodeExecutionData[] | null>;
 }
 
 export interface ITaskDataConnectionsSource {
-	// Key for each input type and because there can be multiple inputs of the same type it is an array
-	// null is also allowed because if we still need data for a later while executing the workflow set teompoary to null
-	// the nodes get as input TaskDataConnections which is identical to this one except that no null is allowed.
 	[key: string]: Array<ISourceData | null>;
 }
 
